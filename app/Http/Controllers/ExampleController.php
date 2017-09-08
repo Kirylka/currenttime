@@ -16,11 +16,10 @@ class ExampleController extends Controller
 
 	public function showProfile()
 	{
-		$pageName = 'currenttimetv';
-		$query = 'SELECT fan_count FROM page WHERE username="' . $pageName . '"';
-		$response = file_get_contents( 'http://api.facebook.com/restserver.php?method=facebook.fql.query&query=' . rawurlencode( $query ) );
-		$xml = simplexml_load_string( $response );
-		echo $xml->page->fan_count;
+
+		$response = [];
+		$response['vk'] = file_get_contents( 'http://api.vk.com/method/groups.getById?gid=78242229&fields=members_count');
+		return $response;
 	}
 
     //
