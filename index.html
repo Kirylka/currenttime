@@ -1,0 +1,17 @@
+<script
+		src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+		crossorigin="anonymous">
+
+</script>
+<script>
+	jQuery(function($){
+		$.ajax({
+			url: 'http://api.vk.com/method/groups.getById?gid=65762432&fields=members_count', // вместо 65762432 указываем свой ID
+			dataType: "jsonp", // тип получаемых данных
+			success:function(e){
+				$('#vkontakte_count').html(e.response[0].members_count) // выводим получаемый результат
+			}
+		});
+	});
+</script>
