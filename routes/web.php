@@ -15,6 +15,6 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->app->get('stats', [
+$router->get('stats', [
 	'as' => 'profile', 'uses' => 'ExampleController@showProfile'
 ]);
