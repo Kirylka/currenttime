@@ -19,6 +19,7 @@ class ExampleController extends Controller
 
 		$response = [];
 		$response['vk'] = file_get_contents( 'http://api.vk.com/method/groups.getById?gid=78242229&fields=members_count');
+		$response['youtube'] = file_get_contents( 'https://www.googleapis.com/youtube/v3/channels?key=AIzaSyCVdq0LYftjXscOS8JK0q37M9uJ2KZkegQ&part=statistics&id=UCLXo7UDZvByw2ixzpQCufnA');
 		return $response;
 	}
 
